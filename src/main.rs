@@ -67,6 +67,7 @@ fn main() {
             }
         }
         else if input == "reset" {
+            println!("{}", format!("The polygon was reset, and {} points were cleared.", points.len()).red());
             points.clear();
         }
         else if input == "exit" {
