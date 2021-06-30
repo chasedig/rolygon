@@ -80,6 +80,7 @@ fn main() {
         }
         else if pointres.is_ok() {
             let point = pointres.unwrap();
+            println!("{}", format!("Coordinate {} added!", point.to_string()).bold().white());
             points.push(point);
         }
         else {
@@ -97,7 +98,6 @@ fn evaluate_coordinates(coord_string: &String) -> Result<Point, String> {
     let input: String = coord_string.replace(" ", "").trim().to_owned();
     let coordinates: Vec<_> = input.split(",").collect();
     if coordinates.len() == 2 {
-        println!("{}", format!("Coordinate {}, {} added!", coordinates[0].to_string(), coordinates[1].to_string()).bold().white());
         let xres = coordinates[0].to_string().parse();
         let yres = coordinates[1].to_string().parse();
         if xres.is_ok() && yres.is_ok() {
